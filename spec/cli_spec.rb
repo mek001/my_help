@@ -63,8 +63,9 @@ RSpec.describe 'my_help', type: :aruba do
        emacs: - Emacs key bind
   EXPECTED
     before(:each) { run_command ("my_help list -d=\'../../test\'") }
+    before(:each) { stop_all_commands }
     it { expect(last_command_started).to be_successfully_executed }
-    it { expect(last_command_started).to eq(expected) }
+    it { expect(last_command_started.stdout).to eq(expected) }
   end
 end
 
