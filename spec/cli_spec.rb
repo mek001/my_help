@@ -64,7 +64,7 @@ RSpec.describe 'my_help', type: :aruba do
   EXPECTED
     before(:each) { run_command ("my_help list -d=\'../../test\'") }
     before(:each) { stop_all_commands }
-    it { puts last_command_started.stdout }
+#    it { puts last_command_started.stdout }
     it { expect(last_command_started).to be_successfully_executed }
     it { expect(last_command_started.stdout).to eq(expected) }
   end
